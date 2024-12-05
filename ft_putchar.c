@@ -6,18 +6,15 @@
 /*   By: aymisbah <aymisbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:23:55 by aymisbah          #+#    #+#             */
-/*   Updated: 2024/12/03 17:55:54 by aymisbah         ###   ########.fr       */
+/*   Updated: 2024/12/05 20:18:12 by aymisbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(int c)
 {
-	int count;
-	
-	count = 0;
-	write (1, &c, 1);
-	count++;
-	return (count);
+	if (write (1, &c, 1) == -1)
+		return (-1);
+	return (1);
 }
